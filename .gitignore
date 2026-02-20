@@ -1,0 +1,17 @@
+# Tizen Studio
+.build/
+.buildResult/
+.sign/
+.package/
+*.wgt
+
+# IDE
+.settings/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

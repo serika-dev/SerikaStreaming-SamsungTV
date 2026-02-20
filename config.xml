@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets"
+        id="http://serika.dev/SerikaStreaming" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="SerikaStr.SerikaStreaming" package="SerikaStr" required_version="6.0"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal"/>
+    <icon src="icon.png"/>
+    <name>Serika Streaming</name>
+
+    <!-- Network access -->
+    <access origin="https://streaming.serika.dev" subdomains="true"/>
+    <access origin="https://streaming.ado.wtf" subdomains="true"/>
+    <access origin="*" subdomains="true"/>
+
+    <!-- Privileges -->
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://tizen.org/privilege/unlimitedstorage"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/network.public"/>
+
+    <!-- Settings -->
+    <tizen:setting screen-orientation="landscape" context-menu="enable"
+                   background-support="enable" encryption="disable"
+                   install-location="auto" hwkey-event="enable"/>
+
+    <!-- Metadata -->
+    <tizen:metadata key="http://samsung.com/tv/metadata/use.network" value="network"/>
+</widget>
