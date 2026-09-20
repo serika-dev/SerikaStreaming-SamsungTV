@@ -1,0 +1,28 @@
+name: Validate Tizen application
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test tests/*.test.cjs
+      - name: Validate manifest and prepare source for Tizen signing
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          tree = ET.parse('config.xml')
+          assert any(e.attrib.get('origin') == 'https://serika.moe' for e in tree.getroot())
+          PY
+          zip -r serika-tizen-source.zip config.xml index.html icon.png js css LICENSE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tizen-source-requires-signing
+          path: serika-tizen-source.zip
