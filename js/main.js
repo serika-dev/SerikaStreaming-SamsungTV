@@ -8,7 +8,7 @@
 (function () {
     'use strict';
 
-    var WEBSITE_URL = 'https://streaming.serika.dev';
+    var WEBSITE_URL = 'https://serika.moe';
 
     // Register TV remote control keys for media playback
     function registerKeys() {
@@ -70,7 +70,7 @@
     // We append ?platform=tizen so the website knows we're on Samsung TV
     function navigateToWebsite() {
         keepScreenOn();
-        window.location.href = WEBSITE_URL + '/login?platform=tizen';
+        window.location.replace(WEBSITE_URL + '/login?platform=tizen');
     }
 
     // Initialize

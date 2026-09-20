@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://serika.dev/SerikaStreaming" version="1.0.0" viewmodes="maximized">
-    <access origin="https://streaming.serika.dev" subdomains="true"></access>
+    <access origin="https://serika.moe" subdomains="true"></access>
     <access origin="https://streaming.ado.wtf" subdomains="true"></access>
     <access origin="*" subdomains="true"></access>
     <tizen:application id="SerikaDev1.SerikaStreaming" package="SerikaDev1" required_version="6.0"/>
-    <author href="https://streaming.serika.dev" email="support@serika.dev">The Serika Company</author>
+    <author href="https://serika.moe" email="support@serika.dev">The Serika Company</author>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal"/>
     <icon src="icon.png"/>
